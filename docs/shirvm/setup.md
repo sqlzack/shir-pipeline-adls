@@ -54,7 +54,13 @@ A Self Hosted Integration Runtime differentiates itself from a regular Azure Int
 8) Once complete, right click to go into Properties for shareFolder again and you should be able to view the network path of your share. This will be used in later steps.
 
       ![](./images/shareSetup02.png)
-<!-- 
-1. Download Sample Files
-2. Install IR
-3. Set up shared folder and put files in it -->
+
+#### Put Sample Files in Share
+1) On the VM, [open the repository](https://github.com/sqlzack/shir-pipeline-adls/) you're currently viewing.
+2) Click on <>Code and download a zip of the repository to the Virtual Machine. 
+
+      ![](./images/sampleFile01.png)
+
+3) Once the download is complete, extract the zip, navigate to the data directory, and locate sample.csv.
+4) Copy sample.csv from the downloaded repository directory to a new directory called tripdata in C:\shareFolder.
+   
