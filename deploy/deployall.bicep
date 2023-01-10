@@ -6,8 +6,8 @@ param adminUsername string
 @secure()
 param adminPassword string
 
-@description('Name for the Public IP used to access the Virtual Machine.')
-param publicIpName string
+// @description('Name for the Public IP used to access the Virtual Machine.')
+// param publicIpName string
 
 @description('The Windows version for the VM. This will pick a fully patched image of this given Windows version.')
 param OSVersion string
@@ -62,7 +62,7 @@ module m_shirVmDeploy 'modules/shirvm.bicep' = {
     bastionHostName: bastionHostName
     bastionPublicIpName: bastionPublicIpName
     OSVersion: OSVersion
-    publicIpName: publicIpName
+    // publicIpName: publicIpName
     vmName: vmName
     vmSize: vmSize
     location: location

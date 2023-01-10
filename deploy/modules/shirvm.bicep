@@ -6,8 +6,8 @@ param adminUsername string
 @secure()
 param adminPassword string
 
-@description('Name for the Public IP used to access the Virtual Machine.')
-param publicIpName string
+// @description('Name for the Public IP used to access the Virtual Machine.')
+// param publicIpName string
 
 @description('The Windows version for the VM. This will pick a fully patched image of this given Windows version.')
 param OSVersion string
@@ -30,14 +30,14 @@ param location string = resourceGroup().location
 @description('Unique DNS Name for the Public IP used for Bastion Host')
 var bastionDnsLabelPrefix = toLower('${bastionHostName}-${uniqueString(resourceGroup().id, bastionHostName)}')
 
-@description('Unique DNS Name for the Public IP used to access the Virtual Machine.')
-var dnsLabelPrefix = toLower('${vmName}-${uniqueString(resourceGroup().id, vmName)}')
+// @description('Unique DNS Name for the Public IP used to access the Virtual Machine.')
+// var dnsLabelPrefix = toLower('${vmName}-${uniqueString(resourceGroup().id, vmName)}')
 
-@description('Allocation method for the Public IP used to access the Virtual Machine.')
-var publicIPAllocationMethod = 'Dynamic'
+// @description('Allocation method for the Public IP used to access the Virtual Machine.')
+// var publicIPAllocationMethod = 'Dynamic'
 
-@description('SKU for the Public IP used to access the Virtual Machine.')
-var publicIpSku = 'Basic'
+// @description('SKU for the Public IP used to access the Virtual Machine.')
+// var publicIpSku = 'Basic'
 
 var storageAccountName = 'shirvmdx${uniqueString(resourceGroup().id)}'
 var nicName = 'shirVmNic'
@@ -56,19 +56,19 @@ resource stg 'Microsoft.Storage/storageAccounts@2021-04-01' = {
   kind: 'Storage'
 }
 
-resource pip 'Microsoft.Network/publicIPAddresses@2021-02-01' = {
-  name: publicIpName
-  location: location
-  sku: {
-    name: publicIpSku
-  }
-  properties: {
-    publicIPAllocationMethod: publicIPAllocationMethod
-    dnsSettings: {
-      domainNameLabel: dnsLabelPrefix
-    }
-  }
-}
+// resource pip 'Microsoft.Network/publicIPAddresses@2021-02-01' = {
+//   name: publicIpName
+//   location: location
+//   sku: {
+//     name: publicIpSku
+//   }
+//   properties: {
+//     publicIPAllocationMethod: publicIPAllocationMethod
+//     dnsSettings: {
+//       domainNameLabel: dnsLabelPrefix
+//     }
+//   }
+// }
 
 resource vn 'Microsoft.Network/virtualNetworks@2021-02-01' = {
   name: virtualNetworkName
@@ -102,9 +102,9 @@ resource nic 'Microsoft.Network/networkInterfaces@2021-02-01' = {
         name: 'ipconfig1'
         properties: {
           privateIPAllocationMethod: 'Dynamic'
-          publicIPAddress: {
-            id: pip.id
-          }
+          // publicIPAddress: {
+          //   id: pip.id
+          // }
           subnet: {
             id: resourceId('Microsoft.Network/virtualNetworks/subnets', vn.name, subnetName)
           }
@@ -139,13 +139,13 @@ resource r_vm 'Microsoft.Compute/virtualMachines@2021-03-01' = {
           storageAccountType: 'StandardSSD_LRS'
         }
       }
-      dataDisks: [
-        {
-          diskSizeGB: 128
-          lun: 0
-          createOption: 'Empty'
-        }
-      ]
+      // dataDisks: [
+      //   {
+      //     diskSizeGB: 128
+      //     lun: 0
+      //     createOption: 'Empty'
+      //   }
+      // ]
     }
     networkProfile: {
       networkInterfaces: [
