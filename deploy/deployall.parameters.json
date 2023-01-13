@@ -11,9 +11,6 @@
       "adminUsername": {
         "value": ""
       },
-      "publicIpName": {
-        "value": ""
-      },
       "OSVersion": {
         "value": "2022-datacenter-azure-edition"
       },

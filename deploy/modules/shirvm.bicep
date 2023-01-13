@@ -6,9 +6,6 @@ param adminUsername string
 @secure()
 param adminPassword string
 
-// @description('Name for the Public IP used to access the Virtual Machine.')
-// param publicIpName string
-
 @description('The Windows version for the VM. This will pick a fully patched image of this given Windows version.')
 param OSVersion string
 
@@ -30,22 +27,12 @@ param location string = resourceGroup().location
 @description('Unique DNS Name for the Public IP used for Bastion Host')
 var bastionDnsLabelPrefix = toLower('${bastionHostName}-${uniqueString(resourceGroup().id, bastionHostName)}')
 
-// @description('Unique DNS Name for the Public IP used to access the Virtual Machine.')
-// var dnsLabelPrefix = toLower('${vmName}-${uniqueString(resourceGroup().id, vmName)}')
-
-// @description('Allocation method for the Public IP used to access the Virtual Machine.')
-// var publicIPAllocationMethod = 'Dynamic'
-
-// @description('SKU for the Public IP used to access the Virtual Machine.')
-// var publicIpSku = 'Basic'
-
 var storageAccountName = 'shirvmdx${uniqueString(resourceGroup().id)}'
 var nicName = 'shirVmNic'
 var addressPrefix = '10.0.0.0/16'
 var subnetName = 'shirVmSubnet'
 var subnetPrefix = '10.0.0.0/24'
 var virtualNetworkName = 'shirVmVnet'
-// var networkSecurityGroupName = 'shirVmNSG'
 
 resource stg 'Microsoft.Storage/storageAccounts@2021-04-01' = {
   name: storageAccountName
@@ -55,20 +42,6 @@ resource stg 'Microsoft.Storage/storageAccounts@2021-04-01' = {
   }
   kind: 'Storage'
 }
-
-// resource pip 'Microsoft.Network/publicIPAddresses@2021-02-01' = {
-//   name: publicIpName
-//   location: location
-//   sku: {
-//     name: publicIpSku
-//   }
-//   properties: {
-//     publicIPAllocationMethod: publicIPAllocationMethod
-//     dnsSettings: {
-//       domainNameLabel: dnsLabelPrefix
-//     }
-//   }
-// }
 
 resource vn 'Microsoft.Network/virtualNetworks@2021-02-01' = {
   name: virtualNetworkName
@@ -139,13 +112,6 @@ resource r_vm 'Microsoft.Compute/virtualMachines@2021-03-01' = {
           storageAccountType: 'StandardSSD_LRS'
         }
       }
-      // dataDisks: [
-      //   {
-      //     diskSizeGB: 128
-      //     lun: 0
-      //     createOption: 'Empty'
-      //   }
-      // ]
     }
     networkProfile: {
       networkInterfaces: [
