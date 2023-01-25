@@ -54,10 +54,6 @@
                     "type": "Expression"
                 }
             }
-        },
-        "connectVia": {
-            "referenceName": "shir-onpremvm",
-            "type": "IntegrationRuntimeReference"
         }
     }
 }

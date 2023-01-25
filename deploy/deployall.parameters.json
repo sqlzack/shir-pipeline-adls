@@ -3,13 +3,13 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "bastionPublicIpName": {
-        "value": ""
+        "value": "bastionPublicIp3"
       },
       "bastionHostName": {
-        "value": ""
+        "value": "shirBastionHost3"
       },
       "adminUsername": {
-        "value": ""
+        "value": "sqladminuser"
       },
       "OSVersion": {
         "value": "2022-datacenter-azure-edition"
@@ -18,19 +18,19 @@
         "value": "Standard_D2s_v5"
       },
       "vmName": {
-        "value": ""
+        "value": "shirVM2"
       },
       "keyVaultName": {
-        "value": ""
+        "value": "zm-analytics-dev-akv3"
       },
       "adfFactoryName": {
-        "value": ""
+        "value": "zm-analytics-dev-adf3"
       },
       "storageAccountName": {
-        "value": ""
+        "value": "zmanalyticsbatchdevsa3"
       },
       "storageAccountContainerName": {
-        "value": ""
+        "value": "raw"
       }
     }
   }

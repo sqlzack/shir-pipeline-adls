@@ -11,8 +11,9 @@ The purpose of this repository is to allow you to simulate the process of bringi
 ## Steps
 1. [Clone the repository you're currently viewing into Visual Studio Code](https://learn.microsoft.com/en-us/azure/developer/javascript/how-to/with-visual-studio-code/clone-github-repository?tabs=create-repo-command-palette%2Cinitialize-repo-activity-bar%2Ccreate-branch-command-palette%2Ccommit-changes-command-palette%2Cpush-command-palette)
 2. [Deploy Resources to Sandbox Resource Group](./docs/deploy/README.md)
-3. [Prepare Azure Key Vault and Add Secrets](./docs/akv/setup.md)
-4. [Assign ADF Storage Blob Data Contributor on Storage](./docs/storage/addStorageMI.md)
+3. [Prepare Azure Key Vault, Add Secrets, ?and add to ADF? ](./docs/akv/setup.md)
+4. [Assign ADF Blob and Table Permissions on ADLS](./docs/storage/addStorageMI.md)
 5. [Create Self Hosted Integration Runtime in Azure Data Factory](./docs/adf/createShir.md)
 6. [Prepare Virtual Machine](./docs/shirvm/setup.md)
-7. [Set up Linked Services in ADF](./docs/adf/linkedServicesDatasets.md)
+7. [Set up Linked Services in ADF](./docs/adf/linkedServices.md)
+8. Set up datasets and pipelines

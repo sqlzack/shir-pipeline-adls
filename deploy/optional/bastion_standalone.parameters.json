@@ -3,19 +3,19 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "virtualNetworkName": {
-      "value": ""
+      "value": "shirVmVnet"
     },
     "bastionPublicIpName": {
-      "value": ""
+      "value": "bastionPublicIp"
     },
     "bastionHostName": {
-      "value": ""
+      "value": "shirBastionHost"
     },
     "subnetName": {
-      "value": ""
+      "value": "AzureBastionSubnet"
     },
     "location": {
-      "value": ""
+      "value": "eastus2"
     }
   }
 }

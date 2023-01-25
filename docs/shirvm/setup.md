@@ -38,7 +38,7 @@ A Self Hosted Integration Runtime differentiates itself from a regular Azure Int
 
       ![](./images/shirSetup05.png)
 
-9) Return to ADF and refresh your integration runtimes. Your Self Hosted Integration Runtime should now have the status of "Ready".
+9) Return to ADF and refresh your integration runtimes. Your Self Hosted Integration Runtime should now have the status of "Running".
 
 #### Create a Share
 1) Open File Explorer on the VM and navigate to the C:\ drive.

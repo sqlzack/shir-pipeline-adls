@@ -21,3 +21,5 @@ This step walks through how to give Azure Data Factory's Managed Identity role b
 10) Watch your Portal notifications to ensure the Role Assignments are created correctly.
 
     ![](./images/addStorageMI03.png)
+
+11) Repeat the process in steps 1-10 and give the Azure Data Factory Managed Identity the **Storage Table Data Contributor** role.
