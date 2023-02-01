@@ -16,4 +16,6 @@ The purpose of this repository is to allow you to simulate the process of bringi
 5. [Create Self Hosted Integration Runtime in Azure Data Factory](./docs/adf/createShir.md)
 6. [Prepare Virtual Machine](./docs/shirvm/setup.md)
 7. [Set up Linked Services in ADF](./docs/adf/linkedServices.md)
-8. Set up datasets and pipelines
+8. [Set up datasets and pipelines in ADF](./docs/adf/datasetsPipelines.md)
+9. [Azure Table Store Metadata/Control Table Explanation](./docs/storage/tableStore.md)
+10. [Load Test Dataset through Pipelines](./docs/adf/loadData.md)
